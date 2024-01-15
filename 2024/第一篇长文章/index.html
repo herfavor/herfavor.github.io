@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Komea">
+
+
+
+    <meta name="description" content="a komea">
+
+
+    <meta name="keywords" content="komea">
+
+
+<title>first paper | Komea</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Komea&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Komea&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">first paper</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Komea</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 15, 2024&nbsp;&nbsp;16:28:06</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>C++程序设计</p>
+<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>1、面向对象的程序设计语言：C++</p>
+<p>2、计算机硬件组成：运算器、控制器、存储器、输入设备、输出设备</p>
+<p>3、计算机指令：执行某种操作的机器命令，硬件直接识别和执行（操作码+操作数）</p>
+<p>4、计算机程序：完成一定功能的指令的有序集合</p>
+<p>5、软件：程序、数据、文档</p>
+<p>6、程序设计发展、C++</p>
+<p>7、机器语言——汇编语言——高级语言——面向对象</p>
+<p>8、C++发展史，继承c语言</p>
+<p>9、C++例子</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span><span class="comment">//预处理，头文件，输入输出流定义在iostream里</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;<span class="comment">//使用std的命名空间，使用的是标准命名空间的东西，如iostream使用的是std命名空间</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;<span class="comment">//字符串用“”,&lt;&lt;是输出流，endl为换行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//主函数结束标志</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、信息表示和存储"><a href="#二、信息表示和存储" class="headerlink" title="二、信息表示和存储"></a>二、信息表示和存储</h2><h3 id="2-1进位计数制和转换"><a href="#2-1进位计数制和转换" class="headerlink" title="2.1进位计数制和转换"></a>2.1进位计数制和转换</h3><h4 id="略"><a href="#略" class="headerlink" title="略"></a>略</h4><h5 id="也略"><a href="#也略" class="headerlink" title="也略"></a>也略</h5><p>略</p>
+<h3 id="2-2数据在计算机的表示"><a href="#2-2数据在计算机的表示" class="headerlink" title="2.2数据在计算机的表示"></a>2.2数据在计算机的表示</h3><h2 id="三、程序中数据的表示"><a href="#三、程序中数据的表示" class="headerlink" title="三、程序中数据的表示"></a>三、程序中数据的表示</h2><h3 id="3-1数据类型"><a href="#3-1数据类型" class="headerlink" title="3.1数据类型"></a>3.1数据类型</h3><p>C++数据类型</p>
+<ul>
+<li>基本类型：</li>
+</ul>
+<ol>
+<li>整型（短整型short int、基本整形int、长整型long int)</li>
+<li>浮点型（单精度folad、双精度doule、长双精度long double）</li>
+<li>字符型char</li>
+<li>逻辑性bool</li>
+<li>空类型void</li>
+</ol>
+<ul>
+<li>构造类型</li>
+</ul>
+<ol>
+<li>数组[]</li>
+<li>结构体struct</li>
+<li>共用体union</li>
+<li>枚举enum</li>
+<li>类class</li>
+</ol>
+<ul>
+<li><p>指针类型*</p>
+</li>
+<li><p>引用类型&amp;</p>
+</li>
+</ul>
+<h3 id="3-2常量、变量"><a href="#3-2常量、变量" class="headerlink" title="3.2常量、变量"></a>3.2常量、变量</h3><p>常量：不可被修改的数据</p>
+<ol>
+<li>整型常量</li>
+<li>浮点型常量</li>
+<li>字符常量</li>
+<li>转义字符表示常量</li>
+</ol>
+<ul>
+<li><p>符号常量</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PI 3.24</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>变量：计算机中的一个内存单元，用变量名代表内存单元。</p>
+<ul>
+<li>先定义、后使用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">变量类型 变量名称 = 初值；</span><br><span class="line">赋值新数据</span><br><span class="line">变量名 = 表达式；</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>const限定</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> 变量类型 = 初值；</span><br><span class="line">例子:</span><br><span class="line"><span class="type">double</span> <span class="built_in">root</span>(<span class="type">const</span> <span class="type">double</span> x)</span><br><span class="line">&#123;</span><br><span class="line">    ...;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">root</span>(a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、运算符与表达式"><a href="#四、运算符与表达式" class="headerlink" title="四、运算符与表达式"></a>四、运算符与表达式</h2><p>常用运算符</p>
+<ul>
+<li>算术运算符</li>
+<li>自增自减运算符</li>
+<li>关系运算符</li>
+<li>逻辑运算符</li>
+<li>赋值运算符</li>
+<li>条件运算符</li>
+<li>逗号运算符</li>
+</ul>
+<p>表达式：可以是常量、变量、函数调用，嵌套，按步骤执行</p>
+<p>类型转换</p>
+<h2 id="五、顺序结构的程序"><a href="#五、顺序结构的程序" class="headerlink" title="五、顺序结构的程序"></a>五、顺序结构的程序</h2><ul>
+<li>简单语句</li>
+</ul>
+<ol>
+<li>表达式语句</li>
+<li>函数调用语句</li>
+</ol>
+<ul>
+<li>复合语句</li>
+<li>控制语句</li>
+</ul>
+<p>C++输入和输出</p>
+<p>使用流对象cin和cout，存在于iostream，再加命名空间的说明</p>
+<p>顺序结构</p>
+<h2 id="六、选择结构的程序"><a href="#六、选择结构的程序" class="headerlink" title="六、选择结构的程序"></a>六、选择结构的程序</h2><h3 id="6-1if和switch"><a href="#6-1if和switch" class="headerlink" title="6.1if和switch"></a>6.1if和switch</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(表达式) 语句<span class="number">1</span>；</span><br><span class="line"><span class="keyword">if</span>(表达式) 语句<span class="number">1</span>;<span class="keyword">else</span> 语句<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>表达式一般为关系、逻辑。</p>
+<h4 id="6-1-1if实现分支的例子"><a href="#6-1-1if实现分支的例子" class="headerlink" title="6.1.1if实现分支的例子"></a>6.1.1if实现分支的例子</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> a,b,c;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    <span class="keyword">if</span>(a+b&gt;c&amp;&amp;a+c&gt;b&amp;&amp;b+c&gt;a)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> s,t;</span><br><span class="line">        t = (a + b + c)/<span class="number">2.0</span>;</span><br><span class="line">        s = <span class="built_in">sqrt</span>(t*(t-a)*(t-b)*(t-c));</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;area&quot;</span>&lt;&lt;s&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> cout &lt;&lt;<span class="string">&quot;error&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-1-2switch"><a href="#6-1-2switch" class="headerlink" title="6.1.2switch"></a>6.1.2switch</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)</span><br><span class="line">&#123;</span><br><span class="line">        case1 常量表达式<span class="number">1</span>：语句序列<span class="number">1</span></span><br><span class="line">        case1 常量表达式<span class="number">2</span>：语句序列<span class="number">2</span></span><br><span class="line">            ...</span><br><span class="line">        <span class="keyword">default</span> :默认语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>case依次执行。</p>
+<p>case n没有执行也会往下执行。</p>
+<p>加break;就跳出，实现多路分支。</p>
+<h3 id="6-2嵌套"><a href="#6-2嵌套" class="headerlink" title="6.2嵌套"></a>6.2嵌套</h3><p>第一种形式</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(表达式<span class="number">1</span>) 语句<span class="number">1</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(表达式<span class="number">2</span>) 语句<span class="number">2</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(表达式m) 语句m</span><br><span class="line"><span class="keyword">else</span> 语句n</span><br></pre></td></tr></table></figure>
+
+<p>第二种形式</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(表达式<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span>(表达式<span class="number">2</span>) 语句<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> 语句<span class="number">2</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">if</span>(表达式<span class="number">3</span>) 语句<span class="number">3</span></span><br><span class="line">    <span class="keyword">else</span> 语句<span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p>switch也可以嵌套</p>
+<p>一个例子</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//计算第二天的日期</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> y,m,d,Days;<span class="comment">//y年，m月，d日，Days某一月多少天</span></span><br><span class="line">    cin&gt;&gt;y&gt;&gt;m&gt;&gt;d;</span><br><span class="line">    <span class="keyword">switch</span>(m)<span class="comment">//先判断是哪一个月，并记录天数，如闰年2月有29天，非闰年2月有28天</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            Days = <span class="number">28</span>;</span><br><span class="line">            <span class="keyword">if</span>((y%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;y%<span class="number">100</span>!=<span class="number">0</span>)||(y%<span class="number">400</span>==<span class="number">0</span>))<span class="comment">//判断闰年</span></span><br><span class="line">                Days++;<span class="comment">//是闰年，Days+1为29天</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">11</span>: Days = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span> : Days = <span class="number">31</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    d++;第二天即天数加<span class="number">1</span>，再判断是否为月末、年末</span><br><span class="line">    <span class="keyword">if</span>(d&gt;Days) <span class="comment">//月末</span></span><br><span class="line">    &#123;</span><br><span class="line">        d = <span class="number">1</span>;</span><br><span class="line">        m++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(m&gt;<span class="number">12</span>)<span class="comment">//年末</span></span><br><span class="line">    &#123;</span><br><span class="line">        m = <span class="number">1</span>;</span><br><span class="line">        y++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;y&lt;&lt;<span class="string">&quot;-&quot;</span>&lt;&lt;m&lt;&lt;<span class="string">&quot;-&quot;</span>&lt;&lt;d&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="七、循环结构的程序"><a href="#七、循环结构的程序" class="headerlink" title="七、循环结构的程序"></a>七、循环结构的程序</h2><h3 id="7-1循环语句"><a href="#7-1循环语句" class="headerlink" title="7.1循环语句"></a>7.1循环语句</h3><h3 id="7-2附加控制语句"><a href="#7-2附加控制语句" class="headerlink" title="7.2附加控制语句"></a>7.2附加控制语句</h3>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Komea</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://herfavor.cn/2024/%E7%AC%AC%E4%B8%80%E7%AF%87%E9%95%BF%E6%96%87%E7%AB%A0/">http://herfavor.cn/2024/%E7%AC%AC%E4%B8%80%E7%AF%87%E9%95%BF%E6%96%87%E7%AB%A0/</a></span>
+                    </p>
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/first-paper1/">第一篇长篇文章</a>
+            
+            
+            <a class="next" rel="next" href="/2024/hello-world/">Hello World</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Komea | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

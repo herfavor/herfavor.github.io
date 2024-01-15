@@ -17,7 +17,7 @@
     <meta name="keywords" content="komea">
 
 
-<title>Hello World | Komea</title>
+<title>Qt Creator使用介绍 | Komea</title>
 
 
 
@@ -44,45 +44,6 @@
 
     
     
-        
-            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "TeX",
-        availableFonts: ["STIX","TeX"],
-        linebreaks: { automatic:true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-        processEscapes: true,
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-        Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-    });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
         
     
 
@@ -239,7 +200,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">Qt Creator使用介绍</h1>
             
                 <div class="post-meta">
                     
@@ -248,14 +209,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">一月 15, 2024&nbsp;&nbsp;14:55:58</a>
+                        Date: <a href="#">一月 5, 2024&nbsp;&nbsp;21:27:59</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/test/">test</a>
+                                <a href="/categories/test3/">test3</a>
                             
                         </span>
                     
@@ -264,19 +225,17 @@
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+            <h1 id="Qt-Creator使用介绍"><a href="#Qt-Creator使用介绍" class="headerlink" title="Qt Creator使用介绍"></a>Qt Creator使用介绍</h1><p>Qt Creator是一款功能强大的集成开发环境（IDE），专为Qt应用程序开发而设计。无论您是初学者还是有经验的开发者，Qt Creator都提供了丰富的功能和友好的界面，使得Qt应用程序的开发变得更加高效和愉悦。</p>
+<img src="/2024/Qt-creator/image-20240115170442531.png" class="" title="image-20240115170442531">
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="安装Qt-Creator"><a href="#安装Qt-Creator" class="headerlink" title="安装Qt Creator"></a>安装Qt Creator</h2><p>首先，您需要从Qt官方网站（<a target="_blank" rel="noopener" href="https://www.qt.io/%EF%BC%89%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85Qt">https://www.qt.io/）下载并安装Qt</a> Creator。安装过程相对简单，只需按照指示进行操作，选择您需要的组件和安装路径即可。</p>
+<h2 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h2><p>在启动Qt Creator后，您可以选择创建一个新项目。这可以通过点击菜单栏上的“文件” -&gt; “新建文件或项目”来实现。选择项目类型、模板和目标平台，然后按照向导的指引完成项目配置。</p>
+<h2 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h2><p>Qt Creator集成了代码编辑器，您可以在其中编写C++和Qt QML代码。代码编辑器支持语法高亮、代码折叠、自动完成等功能，提高了代码编写的效率。您还可以通过“设计”视图直观地设计和编辑用户界面。</p>
+<h2 id="构建和运行"><a href="#构建和运行" class="headerlink" title="构建和运行"></a>构建和运行</h2><p>Qt Creator提供了简便的构建和运行工具。通过点击工具栏上的“构建”按钮，您可以编译和构建您的项目。一旦构建成功，您可以直接在Qt Creator中点击“运行”按钮来启动您的应用程序。调试工具也可以帮助您追踪和解决代码中的问题。</p>
+<h2 id="调试和分析"><a href="#调试和分析" class="headerlink" title="调试和分析"></a>调试和分析</h2><p>Qt Creator集成了强大的调试工具，可以帮助您定位和修复bug。您可以在代码中设置断点，逐步执行代码，查看变量的值等。此外，Qt Creator还支持性能分析工具，帮助您优化应用程序的性能。</p>
+<h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><p>如果您的项目使用版本控制系统（如Git），Qt Creator也提供了相应的集成。您可以在IDE中管理项目的版本历史，提交更改，查看差异等。</p>
+<h2 id="文档和帮助"><a href="#文档和帮助" class="headerlink" title="文档和帮助"></a>文档和帮助</h2><p>Qt Creator附带了丰富的文档和在线帮助。您可以通过菜单栏的“帮助”来访问这些资源，以获取关于Qt和Qt Creator的详细信息，以及解决常见问题的方法。</p>
+<p>总的来说，Qt Creator是一款功能齐全、易于使用的开发工具，为Qt应用程序的开发提供了一站式的解决方案。它的直观界面和强大功能使得开发者能够更专注于创造出高质量的应用程序。</p>
 
         </div>
 
@@ -291,7 +250,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://herfavor.cn/2024/hello-world/">http://herfavor.cn/2024/hello-world/</a></span>
+                        <span><a href="http://herfavor.cn/2024/Qt-creator/">http://herfavor.cn/2024/Qt-creator/</a></span>
                     </p>
                 
                 
@@ -305,7 +264,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/My/"># My</a>
+                        <a href="/tags/test3/"># test3</a>
                     
                         
                 </span>
@@ -318,10 +277,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/%E7%AC%AC%E4%B8%80%E7%AF%87%E9%95%BF%E6%96%87%E7%AB%A0/">first paper</a>
+                <a class="prev" rel="prev" href="/2024/hello-world/">Hello World</a>
             
             
-            <a class="next" rel="next" href="/2024/Qt-creator/">Qt Creator使用介绍</a>
+            <a class="next" rel="next" href="/2019/hi/">MathJax Test</a>
             
         </section>
 

@@ -17,7 +17,7 @@
     <meta name="keywords" content="komea">
 
 
-<title>MathJax Test | Komea</title>
+<title>我的一天 | Komea</title>
 
 
 
@@ -44,45 +44,6 @@
 
     
     
-        
-            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "TeX",
-        availableFonts: ["STIX","TeX"],
-        linebreaks: { automatic:true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-        processEscapes: true,
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-        Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-    });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
         
     
 
@@ -170,11 +131,76 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">MathJax Test</h1>
+            <h1 class="post-title">我的一天</h1>
             
                 <div class="post-meta">
                     
@@ -183,14 +209,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">七月 5, 2019&nbsp;&nbsp;21:27:59</a>
+                        Date: <a href="#">一月 15, 2024&nbsp;&nbsp;16:42:43</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/test/">test</a>
+                                <a href="/categories/test1/">test1</a>
                             
                         </span>
                     
@@ -199,7 +225,14 @@
         </header>
 
         <div class="post-content">
-            <p>公式：<br>$$f(x)&#x3D;ax+b$$</p>
+            <h2 id="我的一天"><a href="#我的一天" class="headerlink" title="我的一天"></a>我的一天</h2><h2 id="早晨"><a href="#早晨" class="headerlink" title="早晨"></a>早晨</h2><p>每天清晨，当闹钟响起时，我会迎接新的一天。尽管六点对于一些人来说可能有点早，但我发现清晨的宁静是我思考和准备一天的理想时光。晨跑成为我日常的一部分，沐浴在清新的空气中，让我感受到自然的活力。</p>
+<h2 id="早餐"><a href="#早餐" class="headerlink" title="早餐"></a>早餐</h2><p>早餐是我注重的一餐，我相信良好的早餐是一天活力的源泉。我会尝试不同口味的燕麦、果汁、鸡蛋和新鲜水果，创造出美味而丰富的早餐盛宴。一杯香浓的咖啡是我启动大脑的必备品，为新的一天注入动力。</p>
+<h2 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h2><p>上午是我投入学术世界的时光。在课堂上，我不仅是知识的接收者，也是知识的创造者。和同学们的互动让我不断思考，而研讨会则是我深化对专业领域理解的机会。这个时段也是我的创作高峰期，我会挑战自己探索新的研究方向。</p>
+<h2 id="午餐"><a href="#午餐" class="headerlink" title="午餐"></a>午餐</h2><p>中午时分，我会选择一个安静的角落，享受一顿悠闲的午餐。我热爱品尝不同文化的美食，有时会尝试在附近的小店发现一些独特的料理。午后的漫步，让我能够在忙碌的学术生活中稍事放松，调整状态。</p>
+<h2 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h2><p>下午通常是实验和深入研究的时候。在实验室里，我与同事们分享观点，解决实际问题。数据分析和实验结果的解读是我这个阶段的主要任务，有时候也会面临一些挑战，但正是这些挑战让我的研究更有深度。</p>
+<h2 id="傍晚"><a href="#傍晚" class="headerlink" title="傍晚"></a>傍晚</h2><p>傍晚是我社交和放松的时间。和同学们聚餐、参加社团活动，或者简单地和朋友聊天，这些都是我在这个时段喜欢做的事情。晚餐可以选择在外面品尝美食，也可以在家做一顿丰盛的晚餐，和室友或朋友一同分享。</p>
+<h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2><p>晚上是我回归个人空间的时候。我会找一些安静的时间，阅读一些喜欢的书籍，或者观看一些有意思的纪录片。在这段时间里，我沉浸在自己的世界中，让思绪得到宣泄。为了确保充足的睡眠，我会在睡前远离电子设备，享受宁静的夜晚。</p>
+<p>这就是我的一天，充实而多彩。每个时刻都是我人生中不可或缺的一部分，构成了我独特而充满活力的研究生生活。</p>
 
         </div>
 
@@ -214,7 +247,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://herfavor.cn/2019/hi/">http://herfavor.cn/2019/hi/</a></span>
+                        <span><a href="http://herfavor.cn/2024/my-day/">http://herfavor.cn/2024/my-day/</a></span>
                     </p>
                 
                 
@@ -228,7 +261,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/My/"># My</a>
+                        <a href="/tags/test1/"># test1</a>
                     
                         
                 </span>
@@ -241,8 +274,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/Qt-creator/">Qt Creator使用介绍</a>
             
+            <a class="next" rel="next" href="/2024/first-paper1/">第一篇长篇文章</a>
             
         </section>
 
